@@ -42,15 +42,23 @@ public class Encryption {
                 case 'x' -> CharNumbers.add(24);
                 case 'y' -> CharNumbers.add(25);
                 case 'z' -> CharNumbers.add(26);
+                case ' ' -> CharNumbers.add(27);
             }
         }
         return CharNumbers;
     }
 
     public ArrayList<Integer> Encrypt(){
-        ArrayList<Integer> Message = new ArrayList<>();
+        ArrayList<Integer> Message = CharToNumberArray();
         ArrayList<Integer> EncrypdetMessage = new ArrayList<>();
-
+        int c;
+        for(int element:  Message){
+            if(element!=27) {
+                EncrypdetMessage.add((int)Math.pow(element, e) % n);
+            } else {
+                EncrypdetMessage.add(0);
+            }
+        }
         return EncrypdetMessage;
     }
 

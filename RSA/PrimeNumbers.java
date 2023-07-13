@@ -10,7 +10,7 @@ public class PrimeNumbers {
 
     //generating prime number
     public int PrimeGenerator(){
-        int number = random.nextInt(100);
+        int number = random.nextInt(20);
         int SqrtNumber = (int) Math.sqrt(number);
         boolean NotPrime = false;
         for(int i = 2; i <= SqrtNumber; i++){
